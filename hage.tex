@@ -35,21 +35,36 @@ $V,W$を集合、$f$を$V$から$W$への写像とする。
     $f$が可逆$\Leftrightarrow$ $f$は双射
 \end{Theorem}
 \begin{proof}[証明]
-    まず、$f$が可逆 $\Rightarrow$ $f$が双射を示す。
+    まず、{\bf $f$が双射$\Rightarrow$ $f$が可逆}を示す。
+    
+    任意の$v\in V$に対して、$f(v)=w$とすると、$f$は単射なので、$w$の逆元は一意に定まる。
+    よって
+    \begin{align}
+        f(v)=w \Rightarrow f^{-1}(w)=v.
+    \end{align}
+    また、$f$は全射でもあるので、任意の$w \in W$に対して逆元が一意に定まる。よって
+    \begin{align}
+        f(v)=w \Leftarrow f^{-1}(w)=v.
+    \end{align}
+    よって、$f$が双射であるとき、$f$は可逆。
 
-    (i)$f$が可逆 $\Rightarrow$ $f$が単射
-
+    次に、{\bf $f$が可逆 $\Rightarrow$ $f$が双射}
+    を示す。これを示すために
+    (i){\bf $f$が可逆 $\Rightarrow$ $f$が単射}
     と
-
-    (ii)$f$が可逆 $\Rightarrow$ $f$が全射
-
-    を示す。
-
+    (ii){\bf $f$が可逆 $\Rightarrow$ $f$が全射}
+    を示す。\\
     (i)対偶を示す。$f$が単射でないとする。すなわち$f$は
     \begin{align}
         \exists v_1, v_2 \in V, v_1 \neq v_2 \land f(v_1)=f(v_2).
     \end{align}
-    を満たすとする。また、$w \in W$を$w = f(v_1)=f(v_2)$とする。
+    を満たすとする。また、$w_0 \in W$を$w_0 = f(v_1)=f(v_2)$とする。
+    $f$が可逆であるためには
+    $f(v_1)=w_0 \Leftrightarrow f^{-1}(w_0)=v_1$ かつ $f(v_2)=w_0 \Leftrightarrow f^{-1}(w_0)=v_2$
+    でなければならないが、これは$f^{-1}$が写像であることに反する。よって$f$は可逆でない。\\
+    (ii)対偶を示す。$f$が全射でないとする。
+    $f$は全射でないので、ある$w_0 \in W$が存在して、任意の$v \in V$に対して、$f(v) \neq w_0$を満たすとする。
+    この$w_0$には$f$の逆像が存在しないので、$f$は可逆ではない。
 \end{proof}
 
 \end{document}
