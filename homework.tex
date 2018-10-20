@@ -6,10 +6,22 @@
 \newtheorem{Theorem}{定理}
 \newtheorem{Definition}{定義}
 
+\newcommand{\Pow}{ {\rm Pow} }
+\newcommand{\Map}{ {\rm Map} }
+\newcommand{\2}{ {\bf 2} }
+
 \begin{document}
 \section{定義の確認}
 本節では後の証明のため、定義の確認を行う。
 $V,W$を集合、$f$を$V$から$W$への写像とする。
+\begin{Definition}[関数集合]
+    $\Map(V,W) = W^V = \{f | f:V \rightarrow W\}$.
+\end{Definition}
+
+\begin{Definition}[冪集合]
+    $\Pow(V) = \{S | S \subseteq V \}$.
+\end{Definition}
+
 \begin{Definition}[可逆性]
     $f(v)=w \Leftrightarrow f^{-1}(w)=v$を満たす写像$f^{-1}$が存在するとき、$f$は{\bf 可逆}であるという。
 \end{Definition}
@@ -26,8 +38,12 @@ $V,W$を集合、$f$を$V$から$W$への写像とする。
     $f$が全射かつ単射であるとき、$f$は{\bf 双射}であるという。
 \end{Definition}
 
+\begin{Definition}[集合としての同型]
+    集合$A,B$の間に全単射が存在するとき、$A,B$は{\bf 同型}であるといい、$A \simeq B$と表記する。
+\end{Definition}
+
 \begin{Definition}[特殊な集合]
-    ${\bf 2} = \{0,1\}$.
+    $\2 = \{0,1\}$.
 \end{Definition}
 
 \section{定理と証明}
@@ -39,13 +55,13 @@ $V,W$を集合、$f$を$V$から$W$への写像とする。
     
     任意の$v\in V$に対して、$f(v)=w$とすると、$f$は単射なので、$w$の逆元は一意に定まる。
     よって
-    \begin{align}
+    \begin{align*}
         f(v)=w \Rightarrow f^{-1}(w)=v.
-    \end{align}
+    \end{align*}
     また、$f$は全射でもあるので、任意の$w \in W$に対して逆元が一意に定まる。よって
-    \begin{align}
+    \begin{align*}
         f(v)=w \Leftarrow f^{-1}(w)=v.
-    \end{align}
+    \end{align*}
     よって、$f$が双射であるとき、$f$は可逆。
 
     次に、{\bf $f$が可逆 $\Rightarrow$ $f$が双射}
@@ -55,9 +71,9 @@ $V,W$を集合、$f$を$V$から$W$への写像とする。
     (ii){\bf $f$が可逆 $\Rightarrow$ $f$が全射}
     を示す。\\
     (i)対偶を示す。$f$が単射でないとする。すなわち$f$は
-    \begin{align}
+    \begin{align*}
         \exists v_1, v_2 \in V, v_1 \neq v_2 \land f(v_1)=f(v_2).
-    \end{align}
+    \end{align*}
     を満たすとする。また、$w_0 \in W$を$w_0 = f(v_1)=f(v_2)$とする。
     $f$が可逆であるためには
     $f(v_1)=w_0 \Leftrightarrow f^{-1}(w_0)=v_1$ かつ $f(v_2)=w_0 \Leftrightarrow f^{-1}(w_0)=v_2$
@@ -67,4 +83,13 @@ $V,W$を集合、$f$を$V$から$W$への写像とする。
     この$w_0$には$f$の逆像が存在しないので、$f$は可逆ではない。
 \end{proof}
 
+\begin{Theorem}
+    $A$を集合とする。$\Pow(A) \simeq {\2}^A$
+\end{Theorem}
+\begin{proof}
+    $g \in {\2}^A$とする。$g$から$A$の冪集合$S_g$への写像$h$を以下のように定義すれば$h$が双射であることは明らか。
+    \begin{align*}
+        h(g) = \{ a | g(a)=1 \}.
+    \end{align*}
+\end{proof}
 \end{document}
