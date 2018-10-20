@@ -1,0 +1,55 @@
+\documentclass{jsarticle}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+
+\newtheorem{Theorem}{定理}
+\newtheorem{Definition}{定義}
+
+\begin{document}
+\section{定義の確認}
+本節では後の証明のため、定義の確認を行う。
+$V,W$を集合、$f$を$V$から$W$への写像とする。
+\begin{Definition}[可逆性]
+    $f(v)=w \Leftrightarrow f^{-1}(w)=v$を満たす写像$f^{-1}$が存在するとき、$f$は{\bf 可逆}であるという。
+\end{Definition}
+
+\begin{Definition}[単射]
+    $\forall v_1,v_2 \in V$に対して、$u \neq v \Rightarrow f(u) \neq f(v)$を満たす時、$f$は{\bf 単射}であるという。
+\end{Definition}
+
+\begin{Definition}[全射]
+    $\forall w \in W$に対して、ある$v \in V$が存在して、$f(v)=w$を満たす時、$f$は{\bf 全射}であるという。
+\end{Definition}
+
+\begin{Definition}[双射]
+    $f$が全射かつ単射であるとき、$f$は{\bf 双射}であるという。
+\end{Definition}
+
+\begin{Definition}[特殊な集合]
+    ${\bf 2} = \{0,1\}$.
+\end{Definition}
+
+\section{定理と証明}
+\begin{Theorem}[可逆生と双射性]
+    $f$が可逆$\Leftrightarrow$ $f$は双射
+\end{Theorem}
+\begin{proof}[証明]
+    まず、$f$が可逆 $\Rightarrow$ $f$が双射を示す。
+
+    (i)$f$が可逆 $\Rightarrow$ $f$が単射
+
+    と
+
+    (ii)$f$が可逆 $\Rightarrow$ $f$が全射
+
+    を示す。
+
+    (i)対偶を示す。$f$が単射でないとする。すなわち$f$は
+    \begin{align}
+        \exists v_1, v_2 \in V, v_1 \neq v_2 \land f(v_1)=f(v_2).
+    \end{align}
+    を満たすとする。また、$w \in W$を$w = f(v_1)=f(v_2)$とする。
+\end{proof}
+
+\end{document}
