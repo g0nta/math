@@ -1,0 +1,77 @@
+\documentclass{jsarticle}
+    \usepackage{amsthm}
+    \usepackage{amsmath}
+    
+    \newtheorem{Theorem}{定理}
+    \newtheorem{Definition}{定義}
+    
+    \newcommand{\Pow}{ {\rm Pow} }
+    \newcommand{\Map}{ {\rm Map} }
+    \newcommand{\2}{ {\bf 2} }
+    
+    \begin{document}
+    \section{定義の確認}
+    本節では後の証明のため、定義の確認を行う。
+    $V,W$を集合、$f$を$V$から$W$への写像とする。
+    \begin{Definition}[関数集合]
+        $\Map(V,W) = W^V = \{f | f:V \rightarrow W\}$.
+    \end{Definition}
+    
+    \begin{Definition}[冪集合]
+        $\Pow(V) = \{S | S \subseteq V \}$.
+    \end{Definition}
+    
+    \begin{Definition}[可逆性]
+        $f(v)=w \Leftrightarrow f^{-1}(w)=v$を満たす写像$f^{-1}$が存在するとき、$f$は{\bf 可逆}であるという。
+    \end{Definition}
+    
+    \begin{Definition}[単射]
+        $\forall v_1,v_2 \in V$に対して、$u \neq v \Rightarrow f(u) \neq f(v)$を満たす時、$f$は{\bf 単射}であるという。
+    \end{Definition}
+    
+    \begin{Definition}[全射]
+        $\forall w \in W$に対して、ある$v \in V$が存在して、$f(v)=w$を満たす時、$f$は{\bf 全射}であるという。
+    \end{Definition}
+    
+    \begin{Definition}[双射]
+        $f$が全射かつ単射であるとき、$f$は{\bf 双射}であるという。
+    \end{Definition}
+    
+    \begin{Definition}[集合としての同型]
+        集合$A,B$の間に全単射が存在するとき、$A,B$は{\bf 同型}であるといい、$A \simeq B$と表記する。
+    \end{Definition}
+    
+    \begin{Definition}[特殊な集合]
+        $\2 = \{0,1\}$.
+    \end{Definition}
+    
+    \section{定理と証明}
+    \begin{Theorem}
+        $A$を集合とする。$\Pow(A) \simeq {\2}^A$
+    \end{Theorem}
+    \begin{proof}
+        $g \in {\2}^A$とする。
+        $g$から$A$の冪集合$\Pow(A)$への写像$h$を以下のように定義する。
+        \begin{align*}
+            h(g) = \{ a | g(a)=1 \}.
+        \end{align*}
+        $h$が双射であることを示す。
+
+        (i){\bf $h$が単射} \\
+        $\forall g,g' \in \2^A$とする。$g \neq g' \rightarrow h(g) \neq h(g')$を示す。
+        $g \neq g'$なので、ある$a_0 \in A$が存在して、$g(a_0) \neq g'(a_0)$を満たす。
+        $g(a_0) = 1$としても一般性を失わない。このとき、$a_0 \in h(g)$だが、$a_0 \in h(g')$である。
+        よって、$h(g) \neq h(g')$.
+
+        (ii){\bf $h$が全射} \\
+        任意の$S \in \Pow(A)$から、$g_S \in \2^A$を構成できれば十分である。
+        $g_S$を下記のように定義する。
+        \begin{align*}
+            g_S(a) = \begin{cases}
+                1 & (a \in S) \\
+                0 & (a \notin S)
+            \end{cases}
+        \end{align*}
+        明らかに$g_S \in \2^A$である。
+    \end{proof}
+    \end{document}
